@@ -21,13 +21,13 @@
 			<div class="prop">
 				<div class="switch">
 					<label>
-						Guids
-						<input type="checkbox" ng-model="CSSGrid.guids">
+						Guides
+						<input type="checkbox" ng-model="CSSGrid.guides">
 						<span class="lever"></span>
 					</label>
 
-					<input type="checkbox" id="expermental_guids" ng-model="CSSGrid.expermental_guids" />
-					<label for="expermental_guids">Experimental <i class="tooltipped tiny material-icons" data-position="right" data-delay="50" data-tooltip="Looks visually better however it does not currently work on all situations. Turn off if the lines look off.">info_outline</i></label>
+					<input type="checkbox" id="expermental_guides" ng-model="CSSGrid.expermental_guides" />
+					<label for="expermental_guides">Experimental <i class="tooltipped tiny material-icons" data-position="right" data-delay="50" data-tooltip="Looks visually better however it does not currently work on all situations. Turn off if the lines look off.">info_outline</i></label>
 				</div>
 			</div>
 
@@ -339,7 +339,7 @@
         <a ng-click="CSSGrid.createNewItem()" class="btn-floating btn-large waves-effect waves-light red tooltipped" data-position="left" data-delay="50" data-tooltip="Add an Item"><i class="material-icons">add</i></a>
         </div>
 
-        <div class="css_grid ghost" ng-if="CSSGrid.guids && CSSGrid.expermental_guids" ng-style="{'height': CSSGrid.container_height ? CSSGrid.container_height + 'px' : 'auto', 'grid-template-columns': CSSGrid.extra_left_cols_text + CSSGrid.grid_template_columns + CSSGrid.extra_right_cols_text, 'grid-template-rows': CSSGrid.extra_top_rows_text + CSSGrid.grid_template_rows, 'grid-row-gap': CSSGrid.grid_row_gap, 'grid-column-gap': CSSGrid.grid_column_gap, 'justify-content': CSSGrid.justify_content, 'align-content': CSSGrid.align_content, 'grid-auto-columns': CSSGrid.grid_auto_columns.value + CSSGrid.grid_auto_columns.unit, 'grid-auto-rows': CSSGrid.grid_auto_rows.value + CSSGrid.grid_auto_rows.unit}">
+        <div class="css_grid ghost" ng-if="CSSGrid.guides && CSSGrid.expermental_guides" ng-style="{'height': CSSGrid.container_height ? CSSGrid.container_height + 'px' : 'auto', 'grid-template-columns': CSSGrid.extra_left_cols_text + CSSGrid.grid_template_columns + CSSGrid.extra_right_cols_text, 'grid-template-rows': CSSGrid.extra_top_rows_text + CSSGrid.grid_template_rows, 'grid-row-gap': CSSGrid.grid_row_gap, 'grid-column-gap': CSSGrid.grid_column_gap, 'justify-content': CSSGrid.justify_content, 'align-content': CSSGrid.align_content, 'grid-auto-columns': CSSGrid.grid_auto_columns.value + CSSGrid.grid_auto_columns.unit, 'grid-auto-rows': CSSGrid.grid_auto_rows.value + CSSGrid.grid_auto_rows.unit}">
 			<div class="css_grid_item" ng-repeat="item in CSSGrid.ghosts track by $index">
 				<div class="css_grid_inner">{{$index+1}}</div>
 				<div class="left line" ></div><div class="right line" ></div>
@@ -347,7 +347,7 @@
 			</div>
 		</div>
 
-		<div class="css_grid ghost_alt" ng-if="CSSGrid.guids && !CSSGrid.expermental_guids" ng-style="{'height': CSSGrid.container_height ? CSSGrid.container_height + 'px' : 'auto', 'grid-template-columns':CSSGrid.grid_template_columns, 'grid-template-rows': CSSGrid.grid_template_rows, 'grid-row-gap': CSSGrid.grid_row_gap, 'grid-column-gap': CSSGrid.grid_column_gap, 'justify-content': CSSGrid.justify_content, 'align-content': CSSGrid.align_content, 'grid-auto-columns': CSSGrid.grid_auto_columns.value + CSSGrid.grid_auto_columns.unit, 'grid-auto-rows': CSSGrid.grid_auto_rows.value + CSSGrid.grid_auto_rows.unit, 'grid-auto-flow': CSSGrid.grid_auto_flow}">
+		<div class="css_grid ghost_alt" ng-if="CSSGrid.guides && !CSSGrid.expermental_guides" ng-style="{'height': CSSGrid.container_height ? CSSGrid.container_height + 'px' : 'auto', 'grid-template-columns':CSSGrid.grid_template_columns, 'grid-template-rows': CSSGrid.grid_template_rows, 'grid-row-gap': CSSGrid.grid_row_gap, 'grid-column-gap': CSSGrid.grid_column_gap, 'justify-content': CSSGrid.justify_content, 'align-content': CSSGrid.align_content, 'grid-auto-columns': CSSGrid.grid_auto_columns.value + CSSGrid.grid_auto_columns.unit, 'grid-auto-rows': CSSGrid.grid_auto_rows.value + CSSGrid.grid_auto_rows.unit, 'grid-auto-flow': CSSGrid.grid_auto_flow}">
 			<div class="css_grid_item" ng-repeat="item in CSSGrid.items" ng-style="{'grid-column-start': CSSGrid.getGridItemValue(item['grid-column-start']) ,'grid-column-end': CSSGrid.getGridItemValue(item['grid-column-end']),'grid-row-start': CSSGrid.getGridItemValue(item['grid-row-start']),'grid-row-end': CSSGrid.getGridItemValue(item['grid-row-end'])}">
 				<div class="css_grid_inner">{{$index+1}}</div>
 				<div class="left line" ></div><div class="right line" ></div>
